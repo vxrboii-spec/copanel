@@ -17,22 +17,15 @@
       display: block;
     }
   </style>
+
+  <!-- Plausible Analytics -->
+  <script defer data-domain="vxrboii-spec.github.io/copanel" src="https://plausible.io/js/script.js"></script>
+
 </head>
 <body>
   <iframe src="https://simplebooklet.com/cpanel"></iframe>
-
-  <script>
-    fetch("https://vercel-logger-sigma.vercel.app/api/log", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        site: "https://vxrboii-spec.github.io/copanel/",
-        userAgent: navigator.userAgent,
-        page: window.location.pathname,
-        time: new Date().toISOString()
-      })
-    });
-  </script>
 </body>
 </html>
+
+
 
