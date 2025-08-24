@@ -22,20 +22,26 @@
   <!-- Main content -->
   <iframe src="https://simplebooklet.com/cpanel"></iframe>
 
-  <!-- TraceMyIP Visitor Tracking -->
-  <div id="elemID031021" style="line-height:16px;text-align:center;z-index:100000;">
-    <a title="Cookieless visitor tracking" href="https://www.tracemyip.org/pv1-3-54023-2">
-      <img src="//s3.tracemyip.org/vLg/1213/4684NR-IPIB/75892/7/njsUrl/" 
-           alt="Cookieless visitor tracking" 
-           referrerpolicy="no-referrer-when-downgrade" 
-           style="border:0px;">
-    </a>
-  </div>
-  <!-- End TraceMyIP -->
+  <!-- Free IP Logger (Google Sheets) -->
+  <script>
+    // Get visitor IP using ipify
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        // Send IP + browser info to Google Sheet
+        fetch("https://script.google.com/macros/s/AKfycbwaCcjyGKRaHcRo180cDFaJIt3AFkRPdhunyGXlaBYwJZHEKFpZQ0Ve8ZqGuFBoatmX/exec", {
+          method: "POST",
+          body: JSON.stringify({
+            ip: data.ip,
+            ua: navigator.userAgent
+          }),
+          headers: { "Content-Type": "application/json" }
+        });
+      })
+      .catch(err => console.error("Logging error:", err));
+  </script>
 </body>
 </html>
-
-
 
 
 
