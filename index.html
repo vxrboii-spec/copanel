@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>copanel Booklet</title>
+  <title>copanel Booklet - Interactive Digital Guide</title>
 
   <!-- Basic Meta Tags -->
-  <meta name="description" content="Access the copanel Booklet directly from your device. Installable like an app on iOS & Android." />
-  <meta name="keywords" content="copanel, booklet, web app, PWA" />
+  <meta name="description" content="Explore the copanel interactive digital booklet with comprehensive guides, tutorials, and resources. Access directly from your device and install as a PWA app." />
+  <meta name="keywords" content="copanel, booklet, digital guide, interactive, PWA, web app" />
   <meta name="author" content="vxrboii-spec" />
 
   <!-- Favicon -->
@@ -22,34 +22,139 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://vxrboii-spec.github.io/copanel/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="copanel Booklet" />
-  <meta property="og:description" content="Access the copanel Booklet directly from your device. Installable like an app on iOS & Android." />
+  <!-- Open Graph - Enhanced for better previews -->
+  <meta property="og:title" content="copanel Booklet - Interactive Digital Guide" />
+  <meta property="og:description" content="Explore the copanel interactive digital booklet with comprehensive guides, tutorials, and resources. Access directly from your device and install as a PWA app." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vxrboii-spec.github.io/copanel/" />
-  <meta property="og:image" content="https://res.cloudinary.com/dnkkqsfza/image/upload/f_auto,q_auto/preview_znhliw.png" />
+  <meta property="og:image" content="https://vxrboii-spec.github.io/copanel/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="copanel Booklet Preview" />
+  <meta property="og:image:alt" content="copanel Interactive Digital Booklet Preview" />
   <meta property="og:site_name" content="copanel Booklet" />
   <meta property="og:locale" content="en_US" />
-  
-  <!-- Facebook App ID (Generic placeholder - you'll need to replace this) -->
-  <meta property="fb:app_id" content="1234567890123456" />
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="copanel Booklet" />
-  <meta name="twitter:description" content="Access the copanel Booklet directly from your device. Installable like an app on iOS & Android." />
-  <meta name="twitter:image" content="https://res.cloudinary.com/dnkkqsfza/image/upload/f_auto,q_auto/preview_znhliw.png" />
-  <meta name="twitter:image:alt" content="copanel Booklet Preview" />
+  <meta name="twitter:title" content="copanel Booklet - Interactive Digital Guide" />
+  <meta name="twitter:description" content="Explore the copanel interactive digital booklet with comprehensive guides, tutorials, and resources. Install as a PWA app on any device." />
+  <meta name="twitter:image" content="https://vxrboii-spec.github.io/copanel/preview.png" />
+  <meta name="twitter:image:alt" content="copanel Interactive Digital Booklet Preview" />
 
   <style>
-    html, body { margin:0; padding:0; height:100%; background:#f5f5f5; }
-    iframe { width:100%; height:100vh; border:none; display:block; }
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 20px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header h1 {
+      margin: 0;
+      color: #333;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    .header .subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+    
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #667eea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .content {
+      height: 100vh;
+      padding-top: 80px;
+    }
+    
+    iframe { 
+      width: 100%; 
+      height: calc(100vh - 80px); 
+      border: none; 
+      display: block;
+    }
+    
+    .hidden-content {
+      position: absolute;
+      left: -9999px;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px 15px;
+      }
+      .header h1 {
+        font-size: 20px;
+      }
+      .content {
+        padding-top: 70px;
+      }
+      iframe {
+        height: calc(100vh - 70px);
+      }
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://simplebooklet.com/cpanel" title="copanel Booklet"></iframe>
+  <!-- Header for better preview and UX -->
+  <div class="header">
+    <div>
+      <h1>copanel Booklet</h1>
+      <div class="subtitle">Interactive Digital Guide</div>
+    </div>
+    <div class="logo">CP</div>
+  </div>
+  
+  <!-- Main content -->
+  <div class="content">
+    <iframe src="https://simplebooklet.com/cpanel" title="copanel Interactive Digital Booklet"></iframe>
+  </div>
+  
+  <!-- Hidden content for web scrapers -->
+  <div class="hidden-content">
+    <h1>copanel Booklet - Interactive Digital Guide</h1>
+    <p>Welcome to the copanel interactive digital booklet! This comprehensive guide provides you with everything you need to know about copanel features, tutorials, and resources.</p>
+    <p>Key features:</p>
+    <ul>
+      <li>Interactive digital content</li>
+      <li>Mobile-friendly design</li>
+      <li>Installable as a Progressive Web App (PWA)</li>
+      <li>Comprehensive guides and tutorials</li>
+      <li>Easy navigation and search functionality</li>
+    </ul>
+    <p>Access the full interactive experience above, or visit directly at simplebooklet.com/cpanel</p>
+  </div>
 </body>
 </html>
