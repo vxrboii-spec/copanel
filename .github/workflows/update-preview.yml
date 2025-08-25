@@ -24,15 +24,20 @@ jobs:
       - name: Install Puppeteer
         run: npm install puppeteer
 
-      - name: Install dependencies for Puppeteer
+      - name: Install Chromium + dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            chromium-browser \
+            chromium-browser chromium-driver \
             libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 \
             libxi6 libxtst6 libnss3 libxrandr2 \
             libpangocairo-1.0-0 libatk1.0-0 libcups2 \
             libdrm2 libdbus-1-3 libxss1 libgtk-3-0
+          
+          # Ensure Puppeteer can find chromium-browser
+          if [ -f /usr/bin/chromium ]; then
+            sudo ln -sf /usr/bin/chromium /usr/bin/chromium-browser
+          fi
 
       - name: Take screenshot
         run: |
@@ -42,7 +47,7 @@ jobs:
             const browser = await puppeteer.launch({
               headless: true,
               args: ['--no-sandbox', '--disable-setuid-sandbox'],
-              executablePath: 'chromium-browser'
+              executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || 'chromium-browser'
             });
             const page = await browser.newPage();
             await page.setViewport({ width: 1280, height: 720 });
