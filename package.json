@@ -1,0 +1,15 @@
+{
+  "name": "copanel",
+  "version": "1.0.0",
+  "scripts": {
+    "screenshot": "node screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.17.0"
+  },
+  "description": "",
+  "main": "screenshot.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
